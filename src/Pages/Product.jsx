@@ -26,7 +26,7 @@ function Product() {
       {isLoading ? (
         <img
           className="w-1/5 mix-blend-multiply"
-          src="\src\assets\Loding.gif"
+          src="\\Loding.gif"
           alt="Loading"
         />
       ) : (

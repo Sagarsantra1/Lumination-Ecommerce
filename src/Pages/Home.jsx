@@ -33,17 +33,17 @@ function Home() {
           feature="Affordable Pricing"
         />
         <FeaturesCard
-          imge="src\assets\account_circle.svg"
+          imge="\account_circle.svg"
           alte="account_circle"
           feature="Personalization"
         />
         <FeaturesCard
-          imge="src\assets\forest.svg"
+          imge="\forest.svg"
           alte="forest"
           feature="Eco Friendly product"
         />
         <FeaturesCard
-          imge="src\assets\package.svg"
+          imge="\package.svg"
           alte="package"
           feature="Fast Shipping"
         />
@@ -60,19 +60,19 @@ function Home() {
       <div className="flex md:justify-center overflow-scroll w-full hideScrol">
         <div className="flex justify-center w-fit">
           <Testimonials
-            imge="src\assets\person1.png"
+            imge="\person1.png"
             alte="person1"
             name="Samantha Patel"
             testimoni="I absolutely love the candles from Wick & Glow! The scents are so unique and luxurious, and they always burn evenly.I've even started giving them as gifts to my friends and family."
           />
           <Testimonials
-            imge="src\assets\person2.png"
+            imge="\person2.png"
             alte="person2"
             name="John Nguyen"
             testimoni="I stumbled upon Lumin Modern Candles while browsing online, and I'm so glad I did! The candles are beautifully designed and smell amazing. I've been burning one every night to wind down before bed."
           />
           <Testimonials
-            imge="src\assets\person3.png"
+            imge="\person3.png"
             alte="person3"
             name="Amanda Rodriguez"
             testimoni="I can't recommend Pure Light Candles enough. The quality of the ingredients really shines through in the scent and burn time of each candle. Plus, the minimalist design fits perfectly with my home decor."

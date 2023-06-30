@@ -79,7 +79,7 @@ function About() {
       <div className="flex justify-center overflow-scroll w-full hideScrol">
         <div className="flex justify-center w-fit">
           <ProcessCard
-            imge="src\assets\High-Quality.svg"
+            imge="\High-Quality.svg"
             alte="High-Quality "
             process="High-Quality"
             point1="Natural soy wax, lead-free wicks"
@@ -88,7 +88,7 @@ function About() {
             point4="Trusted, values-aligned suppliers"
           />
           <ProcessCard
-            imge="src\assets\Handcrafted.svg"
+            imge="\Handcrafted.svg"
             alte="Handcrafted "
             process="Handcrafted "
             point1="Hand-poured with attention"
@@ -97,7 +97,7 @@ function About() {
             point4="Quality testing"
           />
           <ProcessCard
-            imge="src\assets\Customizable.svg"
+            imge="\Customizable.svg"
             alte="Customizable "
             process="Customizable "
             point1="Variety of scents, sizes"
@@ -106,7 +106,7 @@ function About() {
             point4="Variety of container options"
           />
           <ProcessCard
-            imge="src\assets\Eco Friendly.svg"
+            imge="\Eco Friendly.svg"
             alte="Eco Friendly "
             process="Eco Friendly "
             point1="Sustainable materials and packaging"
@@ -126,28 +126,28 @@ function About() {
       <div className="flex justify-center overflow-scroll w-full hideScrol">
         <div className="flex justify-center w-fit">
           <TeamCard
-            imge="src\assets\team1.png"
+            imge="\team1.png"
             alte="team1"
             name="Sarah Johnson"
             designation="Head Candle Maker"
             qulification="Bachelor's Degree in Fine Arts"
           />
           <TeamCard
-            imge="src\assets\team2.png"
+            imge="\team2.png"
             alte="team2"
             name="David Lee"
             designation="Shipping Manager"
             qulification="High School Diploma"
           />
           <TeamCard
-            imge="src\assets\team3.png"
+            imge="\team3.png"
             alte="team3"
             name="Emily Davis"
             designation="Marketing Specialist"
             qulification="Bachelor's Degree in Marketing"
           />
           <TeamCard
-            imge="src\assets\team4.png"
+            imge="\team4.png"
             alte="team4"
             name="Michael Nguyen"
             designation="Operations Manager"

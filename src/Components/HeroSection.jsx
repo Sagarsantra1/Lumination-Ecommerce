@@ -13,7 +13,7 @@ function HeroSection() {
       <img
         className=" w-full mb-10 relative bottom-24 object-cover object-center rounded mix-blend-multiply"
         alt="hero"
-        src="src\assets\upscaler-Sagarinimalist_website_ho-2x-2x.jpg"
+        src="\upscaler-Sagarinimalist_website_ho-2x-2x.jpg"
       />
     </div>
   );
