@@ -164,7 +164,8 @@ function About() {
       <div className="flex flex-col text-center">
         <span>You can reach us by</span>
         <span>
-          email at <b>info@luminationcandles.com</b> or by phone at <b>(555) 555-5555</b> .
+          email at <b>info@luminationcandles.com</b> or by phone at{" "}
+          <b>(555) 555-5555</b> .
         </span>
         <span>We'd love to hear from you!</span>
       </div>

@@ -1,7 +1,7 @@
 import { BsHandbag } from "react-icons/bs";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
 import React, { useState } from "react";
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useStateContext } from "../../context/StateContext";
 
 const NavBar = () => {
@@ -11,7 +11,7 @@ const NavBar = () => {
 
   const isNavLinkActive = (url) => {
     if (location.pathname === url) {
-      return "active"
+      return "active";
     }
   };
 
@@ -38,16 +38,28 @@ const NavBar = () => {
               Clicked ? "left-0" : "-left-full"
             } h-full w-9/12 md:w-full bg-gray-200 bg-opacity-90 md:bg-inherit flex flex-wrap items-start md:items-center p-5 md:p-0 text-base justify-start md:justify-center flex-col md:flex-row transition-all duration-500`}
           >
-            <Link to="/" className={`mr-5 text-black my-2 ${isNavLinkActive("/")}`}>
+            <Link
+              to="/"
+              className={`mr-5 text-black my-2 ${isNavLinkActive("/")}`}
+            >
               Home
             </Link>
-            <Link to="/Product" className={`mr-5 text-black my-2 ${isNavLinkActive("/Product")}`}>
+            <Link
+              to="/Product"
+              className={`mr-5 text-black my-2 ${isNavLinkActive("/Product")}`}
+            >
               Product
             </Link>
-            <Link to="/Blogs" className={`mr-5 text-black my-2 ${isNavLinkActive("/Blogs")}`}>
+            <Link
+              to="/Blogs"
+              className={`mr-5 text-black my-2 ${isNavLinkActive("/Blogs")}`}
+            >
               Blogs
             </Link>
-            <Link to="/About" className={`mr-5 text-black my-2 ${isNavLinkActive("/About")}`}>
+            <Link
+              to="/About"
+              className={`mr-5 text-black my-2 ${isNavLinkActive("/About")}`}
+            >
               About
             </Link>
           </nav>

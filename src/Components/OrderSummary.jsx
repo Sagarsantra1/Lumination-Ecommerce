@@ -34,8 +34,9 @@ function OrderSummary() {
           ${totalPrice + shipingCharge}
         </p>
       </div>
-      <button className="flex items-center justify-center w-1/2 text-black  border border-black py-2 m-2 focus:outline-none hover:bg-black hover:text-white rounded-lg"
-      onClick={buyNow}
+      <button
+        className="flex items-center justify-center w-1/2 text-black  border border-black py-2 m-2 focus:outline-none hover:bg-black hover:text-white rounded-lg"
+        onClick={buyNow}
       >
         Chackout
       </button>

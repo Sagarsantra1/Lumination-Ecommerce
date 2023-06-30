@@ -24,11 +24,11 @@ function Product() {
   return (
     <div className="flex flex-col justify-center items-center px-5 min-h-screen">
       {isLoading ? (
-                <img
-                className="w-1/5 mix-blend-multiply"
-                src="\src\assets\Loding.gif"
-                alt="Loading"
-              />
+        <img
+          className="w-1/5 mix-blend-multiply"
+          src="\src\assets\Loding.gif"
+          alt="Loading"
+        />
       ) : (
         <>
           <span className="text-3xl font-bold logo">All Products</span>

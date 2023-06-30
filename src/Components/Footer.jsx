@@ -1,4 +1,9 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -12,29 +17,53 @@ function Footer() {
             </p>
             <div className="list-none mb-10">
               <li>
-                <Link to="/Termsofservice" className="text-gray-400 hover:text-white">Terms of service</Link>
+                <Link
+                  to="/Termsofservice"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Terms of service
+                </Link>
               </li>
               <li>
-                <Link to="/Shippingpolicy" className="text-gray-400 hover:text-white">Shipping policy</Link>
+                <Link
+                  to="/Shippingpolicy"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Shipping policy
+                </Link>
               </li>
               <li>
-                <Link to="/Refundpolicy" className="text-gray-400 hover:text-white">Refund policy</Link>
+                <Link
+                  to="/Refundpolicy"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Refund policy
+                </Link>
               </li>
               <span className="inline-flex mt-4 justify-center">
-              <Link to="/" className="text-gray-400 hover:text-white">
-                <FaFacebookF/>
+                <Link to="/" className="text-gray-400 hover:text-white">
+                  <FaFacebookF />
                 </Link>
-                <Link to="https://twitter.com/SagarSa03495060" className="ml-3 text-gray-400 hover:text-white"
-                target="_blank">
-                <FaTwitter/>
+                <Link
+                  to="https://twitter.com/SagarSa03495060"
+                  className="ml-3 text-gray-400 hover:text-white"
+                  target="_blank"
+                >
+                  <FaTwitter />
                 </Link>
-                <Link to="https://www.instagram.com/sagarsantra397/" className="ml-3 text-gray-400 hover:text-white"
-                target="_blank">
-                <FaInstagram/>
+                <Link
+                  to="https://www.instagram.com/sagarsantra397/"
+                  className="ml-3 text-gray-400 hover:text-white"
+                  target="_blank"
+                >
+                  <FaInstagram />
                 </Link>
-                <Link to="https://www.linkedin.com/in/sagar-santra-8526051ab/" className="ml-3 text-gray-400 hover:text-white"
-                target="_blank">
-                <FaLinkedin/>
+                <Link
+                  to="https://www.linkedin.com/in/sagar-santra-8526051ab/"
+                  className="ml-3 text-gray-400 hover:text-white"
+                  target="_blank"
+                >
+                  <FaLinkedin />
                 </Link>
               </span>
             </div>
@@ -46,16 +75,24 @@ function Footer() {
             </h2>
             <div className="list-none mb-10">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-white">Home</Link>
+                <Link to="/" className="text-gray-400 hover:text-white">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/Product" className="text-gray-400 hover:text-white">Product</Link>
+                <Link to="/Product" className="text-gray-400 hover:text-white">
+                  Product
+                </Link>
               </li>
               <li>
-                <Link to="/Blogs" className="text-gray-400 hover:text-white">Blogs</Link>
+                <Link to="/Blogs" className="text-gray-400 hover:text-white">
+                  Blogs
+                </Link>
               </li>
               <li>
-                <Link to="/About" className="text-gray-400 hover:text-white">About</Link>
+                <Link to="/About" className="text-gray-400 hover:text-white">
+                  About
+                </Link>
               </li>
             </div>
           </div>

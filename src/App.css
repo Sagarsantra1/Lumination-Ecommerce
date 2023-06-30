@@ -1,43 +1,51 @@
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Work+Sans:ital,wght@0,200;0,300;0,400;1,100&display=swap');
 
-*{
-  font-family: 'Work Sans', sans-serif;
-}
-.logo{
-  font-family: 'Dancing Script', cursive;
-}
+  * {
+    font-family: 'Work Sans', sans-serif;
+  }
 
-html{
-  background-color: #E9E9E7;
-}
-.hero_color{
-  background-color: #E7E1CC;
-}
-nav a:after {
-  content: "";
-  position: relative;
-  width: 0%;
-  height: 1px;
-  display: block;
-  transition: all 0.3s ease;
-  background-color: black;
-}
-nav a:hover::after, .active::after{
-  width: 100%;
-}
+  .logo {
+    font-family: 'Dancing Script', cursive;
+  }
 
-.productCard{
-  height: 20rem;
-  width: 15rem;
-}
-.BlogCard{
-  height: 25rem;
-  width: 22rem;
-}
-a{
-  cursor: pointer;
-}
-/* ===== Scrollbar CSS ===== */
+  html {
+    background-color: #E9E9E7;
+  }
+
+  .hero_color {
+    background-color: #E7E1CC;
+  }
+
+  nav a:after {
+    content: "";
+    position: relative;
+    width: 0%;
+    height: 1px;
+    display: block;
+    transition: all 0.3s ease;
+    background-color: black;
+  }
+
+  nav a:hover::after,
+  .active::after {
+    width: 100%;
+  }
+
+  .productCard {
+    height: 20rem;
+    width: 15rem;
+  }
+
+  .BlogCard {
+    height: 25rem;
+    width: 22rem;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
     scrollbar-width: thin;
@@ -58,16 +66,20 @@ a{
     border-radius: 10px;
     border: 3px solid #ffffff;
   }
-  /* Hide scrollbar for Chrome, Safari and Opera */
-.hideScrol::-webkit-scrollbar {
-  display: none;
-}
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.hideScrol {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hideScrol::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hideScrol {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
   html {
     scroll-behavior: smooth;
   }

@@ -6,6 +6,7 @@ import blogs from "../Database/BlogsData";
 import ProductCard from "../Components/ProductCard";
 import React, { useState, useEffect } from "react";
 import { client } from "../../lib/client";
+
 function Home() {
   const [products, setproducts] = useState([]);
   const [blogs, setblogs] = useState([]);
@@ -28,7 +29,7 @@ function Home() {
       <span className="text-xl font-bold">key features</span>
       <div className="flex flex-wrap justify-between w-full">
         <FeaturesCard
-          imge="public\sell.svg"
+          imge="../../public/sell.svg"
           alte="Affordable Pricing"
           feature="Affordable Pricing"
         />

@@ -18,8 +18,12 @@ function SingalBlog() {
 
   return (
     <div className="px-5 py-5 md:px-32 text-gray-600">
-      {coverImage&&(
-      <img className="md:max-h-96 mx-auto" src={urlFor(coverImage)} alt={`${title} image`} />
+      {coverImage && (
+        <img
+          className="md:max-h-96 mx-auto"
+          src={urlFor(coverImage)}
+          alt={`${title} image`}
+        />
       )}
       <h1 className="text-3xl md:text-5xl text-black py-5">{title}</h1>
       <span className="my-5">{publishedAt}</span>
