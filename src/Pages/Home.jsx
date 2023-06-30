@@ -28,8 +28,8 @@ function Home() {
       <span className="text-xl font-bold">key features</span>
       <div className="flex flex-wrap justify-between w-full">
         <FeaturesCard
-          imge="src\assets\sell.svg"
-          alte="sell"
+          imge="public\sell.svg"
+          alte="Affordable Pricing"
           feature="Affordable Pricing"
         />
         <FeaturesCard
