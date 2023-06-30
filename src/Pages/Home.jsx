@@ -2,7 +2,6 @@ import HeroSection from "../Components/HeroSection";
 import FeaturesCard from "../Components/FeaturesCard";
 import Testimonials from "../Components/Testimonials";
 import BlogCard from "../Components/BlogCard";
-import blogs from "../Database/BlogsData";
 import ProductCard from "../Components/ProductCard";
 import React, { useState, useEffect } from "react";
 import { client } from "../../lib/client";
@@ -29,7 +28,7 @@ function Home() {
       <span className="text-xl font-bold">key features</span>
       <div className="flex flex-wrap justify-between w-full">
         <FeaturesCard
-          imge="../../public/sell.svg"
+          imge="/sell.svg"
           alte="Affordable Pricing"
           feature="Affordable Pricing"
         />
