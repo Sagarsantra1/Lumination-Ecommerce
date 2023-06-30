@@ -1,0 +1,10 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="forest">
+<mask id="mask0_15_188" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+<rect id="Bounding box" x="0.5" y="0.5" width="71" height="71" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_15_188)">
+<path id="forest_2" d="M11.8896 35.4991H7.377L27.125 7.28773L46.873 35.4991H42.3604H41.4423L41.9404 36.2704L52.9058 53.2491H33.0417H32.5417V53.7491V65.0825H21.7083V53.7491V53.2491H21.2083H1.41492L12.3104 36.2692L12.8045 35.4991H11.8896ZM53.9378 38.6708L38.4583 16.5468L44.8769 7.29049L64.623 35.4991H60.1104H59.1955L59.6896 36.2692L70.5851 53.2491H57.7193L48.7547 39.4575H53.5281H54.4882L53.9378 38.6708ZM39.4583 65.0825V57.2075H50.2917V65.0825H39.4583Z" fill="#B3E5BE" stroke="black"/>
+</g>
+</g>
+</svg>
