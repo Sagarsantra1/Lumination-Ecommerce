@@ -8,6 +8,8 @@ export const StateContext = ({ children }) => {
   const [totalPrice, settotalPrice] = useState(0);
   const [totalQuntites, settotalQuntites] = useState(0);
   const [qty, setqty] = useState(1);
+  const [toggle, settoggle] = useState(false);
+  
 
   const incQty = () => {
     setqty((prevqty) => prevqty + 1);
@@ -78,12 +80,17 @@ export const StateContext = ({ children }) => {
     icon: '😿',
   });
 
+const usetoggle =(prevtoggle)=>{
+  toggle?settoggle(false):settoggle(true)
+}
+
   return (
     <context.Provider
       value={{
         cartItem,
         totalPrice,
         totalQuntites,
+        toggle,
         qty,
         incQty,
         decQty,
@@ -91,6 +98,7 @@ export const StateContext = ({ children }) => {
         changeCartProductQuantity,
         removeCartProducr,
         buyNow,
+        usetoggle,
       }}
     >
       {children}

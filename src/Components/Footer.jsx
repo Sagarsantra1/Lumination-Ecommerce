@@ -110,8 +110,7 @@ function Footer() {
                   Enter your mail
                 </label>
                 <input
-                  type="text"
-                  id="footer-field"
+                  type="mail"
                   name="footer-field"
                   className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-gray-800 focus:border-gray-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 />
