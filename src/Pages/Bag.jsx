@@ -8,7 +8,7 @@ function Bag() {
   const { cartItem } = useStateContext();
 
   return (
-    <div className="flex flex-wrap justify-center items-center p-10 min-h-screen">
+    <div className="flex flex-wrap justify-center p-10 min-h-screen">
       {cartItem.length >= 1 && (
         <>
           <div className=" w-full md:w-2/4 h-fit border-r border-gray-300 pr-10">
