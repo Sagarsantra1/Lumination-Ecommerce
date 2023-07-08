@@ -5,23 +5,52 @@ import BlogCard from "../Components/BlogCard";
 import ProductCard from "../Components/ProductCard";
 import React, { useState, useEffect } from "react";
 import { client } from "../../lib/client";
+import { useQueries } from "react-query";
 
 function Home() {
   const [products, setproducts] = useState([]);
   const [blogs, setblogs] = useState([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      const blogQuary = `*[_type == "post"]`;
-      const productQuary = `*[_type == "product"]`;
-      const blog = await client.fetch(blogQuary);
-      const productData = await client.fetch(productQuary);
-      setblogs(blog);
-      setproducts(productData);
-    };
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const blogQuary = `*[_type == "post"]`;
+  //     const blog = await client.fetch(blogQuary);
+  //     const productData = await client.fetch(productQuary);
+  //     setblogs(blog);
+  //     setproducts(productData);
+  //   };
+  //   getData();
+  // }, []);
 
+  const queries = useQueries([
+    {
+      queryKey: "Best seller",
+      queryFn: async () =>
+        await client.fetch(`*[_type=="productCategory"&&name=="Best seller"]{
+          "products": *[_type=='product' && references(^._id)]
+        }[0].products`),
+    },
+    {
+      queryKey: "Most popular",
+      queryFn: async () =>
+        await client.fetch(`*[_type=="blogCategory"&&name=="Most popular"]{
+        "Blogs": *[_type=='post' && references(^._id)]
+      }[0].Blogs`),
+    },
+  ]);
+
+  const query1Result = queries[0];
+  const query2Result = queries[1];
+  if (query1Result.isLoading || query2Result.isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (query1Result.isError || query2Result.isError) {
+    return <div>Error occurred while fetching data.</div>;
+  }
+
+  const bestSellerData = query1Result.data;
+  const mostPopularData = query2Result.data;
   return (
     <div className="flex flex-col justify-center items-center">
       <HeroSection />
@@ -49,9 +78,9 @@ function Home() {
         />
       </div>
       <span className="text-xl font-bold">Best seller</span>
-      <div className="overflow-scroll w-full px-28 hideScrol">
+      <div className="overflow-scroll w-full md:px-20 px-2 hideScrol">
         <div className="flex justify-center w-fit">
-          {products?.map((product) => {
+          {bestSellerData?.map((product) => {
             return <ProductCard key={product._id} product={product} />;
           })}
         </div>
@@ -80,9 +109,9 @@ function Home() {
         </div>
       </div>
       <span className="text-xl font-bold">Blogs</span>
-      <div className="overflow-scroll w-full px-20 hideScrol">
+      <div className="overflow-scroll w-full md:px-20 hideScrol">
         <div className="flex justify-center w-fit">
-          {blogs.map((blog) => {
+          {mostPopularData?.map((blog) => {
             return <BlogCard key={blog._id} blog={blog} />;
           })}
         </div>

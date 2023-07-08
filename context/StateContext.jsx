@@ -1,15 +1,37 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 const context = createContext();
 
 export const StateContext = ({ children }) => {
-  const [cartItem, setcartItem] = useState([]);
   const [totalPrice, settotalPrice] = useState(0);
   const [totalQuntites, settotalQuntites] = useState(0);
   const [qty, setqty] = useState(1);
   const [toggle, settoggle] = useState(false);
-  
+
+  const getLocalStorageCartItem = () => {
+    let localStorageCartItem = localStorage.getItem("cartItem");
+    if (localStorageCartItem === []) {
+      return [];
+    } else {
+      const localCartItem = JSON.parse(localStorageCartItem);
+      localCartItem.map((Product) => {
+        settotalQuntites(
+          (prevtotalQuntites) => prevtotalQuntites + Product.quantity
+        );
+        settotalPrice(
+          (prevtotalPrice) => prevtotalPrice + Product.price * Product.quantity
+        );
+      });
+      return localCartItem;
+    }
+  };
+
+  const [cartItem, setcartItem] = useState(getLocalStorageCartItem);
+
+  useEffect(() => {
+    localStorage.setItem("cartItem", JSON.stringify(cartItem));
+  }, [cartItem]);
 
   const incQty = () => {
     setqty((prevqty) => prevqty + 1);
@@ -42,8 +64,8 @@ export const StateContext = ({ children }) => {
       product.quantity = quantity;
       setcartItem([...cartItem, { ...product }]);
     }
-    setqty(1)
-    toast.success(`${quantity} ${product.name} added to the bag`)
+    setqty(1);
+    toast.success(`${quantity} ${product.name} added to the bag`);
   };
 
   const changeCartProductQuantity = (id, value) => {
@@ -71,18 +93,22 @@ export const StateContext = ({ children }) => {
   const removeCartProducr = (id) => {
     let foundProduct = cartItem.find((item) => item._id == id);
     const newcartitems = cartItem.filter((item) => item._id != id);
-    settotalPrice((prevtotalPrice) => prevtotalPrice - foundProduct.price*foundProduct.quantity);
-    settotalQuntites((prevtotalQuntites) => prevtotalQuntites - foundProduct.quantity);
+    settotalPrice(
+      (prevtotalPrice) =>
+        prevtotalPrice - foundProduct.price * foundProduct.quantity
+    );
+    settotalQuntites(
+      (prevtotalQuntites) => prevtotalQuntites - foundProduct.quantity
+    );
     setcartItem([...newcartitems]);
   };
 
-  const buyNow=()=>toast('Sorry! This is a test application', {
-    icon: '😿',
-  });
+  const buyNow = () =>
+    toast("Sorry! This is a test application", {
+      icon: "😿",
+    });
 
-const usetoggle =(prevtoggle)=>{
-  toggle?settoggle(false):settoggle(true)
-}
+  const usetoggle = () => (toggle ? settoggle(false) : settoggle(true));
 
   return (
     <context.Provider

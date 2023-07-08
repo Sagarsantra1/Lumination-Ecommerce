@@ -3,23 +3,35 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { client, urlFor } from "../../lib/client";
 import { useStateContext } from "../../context/StateContext";
+import { useQuery } from "react-query";
 
 function ProductDetials() {
   let [Index, setIndex] = useState(0);
-  const [product, setproduct] = useState([]);
   const { slug } = useParams();
 
-  useEffect(() => {
-    const getData = async () => {
-      const quary = `*[_type == "product"&&slug.current == "${slug}"]`;
-      const productData = await client.fetch(quary);
-      setproduct(productData[0]);
-    };
-    getData();
-  }, [slug]);
-
-  const { image, name, price, details } = product;
+  const getData = async () => {
+    const quary = `*[_type == "product"&&slug.current == "${slug}"][0]`;
+    return await client.fetch(quary);
+  };
+  const { data, isLoading, error } = useQuery(`${slug}`, getData);
   const { incQty, decQty, onAdd, qty, buyNow } = useStateContext();
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-col justify-center items-center px-5 min-h-screen">
+      <img
+        className="w-1/5 mix-blend-multiply"
+        src="\Loding.gif"
+        alt="Loading"
+      />
+      </div>
+    );
+  }
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  const { image, name, price, details } = data;
 
   return (
     <div className="w-full px-5 md:px-18 py-5 flex items-center justify-center flex-wrap">
@@ -92,7 +104,7 @@ function ProductDetials() {
         <div className="flex">
           <button
             className="flex items-center justify-center w-1/3 text-black  border border-black py-2 px-6 m-2 focus:outline-none hover:bg-black hover:text-white rounded-lg"
-            onClick={() => onAdd(product, qty)}
+            onClick={() => onAdd(data, qty)}
           >
             Add to Bag
           </button>
