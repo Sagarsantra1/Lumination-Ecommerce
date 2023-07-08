@@ -9,13 +9,9 @@ export const StateContext = ({ children }) => {
   const [qty, setqty] = useState(1);
   const [toggle, settoggle] = useState(false);
 
-  useEffect(() => {
-    localStorage.setItem("cartItem", JSON.stringify(cartItem));
-  }, [cartItem]);
-
   const getLocalStorageCartItem = () => {
     let localStorageCartItem = localStorage.getItem("cartItem");
-    if (localStorageCartItem == []) {
+    if (localStorageCartItem == []||localStorageCartItem==null) {
       return [];
     } else {
       const localCartItem = JSON.parse(localStorageCartItem);
@@ -32,6 +28,10 @@ export const StateContext = ({ children }) => {
   };
 
   const [cartItem, setcartItem] = useState(getLocalStorageCartItem);
+
+  useEffect(() => {
+    localStorage.setItem("cartItem", JSON.stringify(cartItem));
+  }, [cartItem]);
 
   const incQty = () => {
     setqty((prevqty) => prevqty + 1);
