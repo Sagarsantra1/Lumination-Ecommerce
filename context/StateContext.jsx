@@ -11,7 +11,7 @@ export const StateContext = ({ children }) => {
 
   const getLocalStorageCartItem = () => {
     let localStorageCartItem = localStorage.getItem("cartItem");
-    if (localStorageCartItem === []) {
+    if (localStorageCartItem == []) {
       return [];
     } else {
       const localCartItem = JSON.parse(localStorageCartItem);
